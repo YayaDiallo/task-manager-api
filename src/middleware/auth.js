@@ -23,12 +23,3 @@ const auth = async (req, res, next) => {
 };
 
 module.exports = auth;
-
-// Middleware
-// app.use((req, res, next) => {
-//   if (req.method === 'GET') {
-//     res.send('GET requests are disabled');
-//   } else {
-//     next();
-//   }
-// });

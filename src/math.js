@@ -11,7 +11,7 @@ const celsiusToFahrenheit = (temp) => {
 const add = (a, b) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (a < b || b < 0) {
+      if (a < 0 || b < 0) {
         return reject('Numbers must be non-negative');
       }
       resolve(a + b);

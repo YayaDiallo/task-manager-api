@@ -31,6 +31,7 @@ router.post('/users', async (req, res) => {
 });
 
 router.post('/users/login', async (req, res) => {
+  console.log('Login');
   try {
     const user = await User.findByCredentials(
       req.body.email,
@@ -39,7 +40,7 @@ router.post('/users/login', async (req, res) => {
     const token = await user.generateAuthToken();
     res.send({ user, token });
   } catch (err) {
-    res.status(400).send();
+    res.status(400).send({ error: err });
   }
 });
 
